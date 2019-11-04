@@ -23,6 +23,7 @@
     
 ##### application.yml
 
+```yaml
 aliyun:
   sms:
     accessKeyId:
@@ -38,7 +39,10 @@ aliyun:
 email:
    username:
    password:
-   host:       
+   host:  
+
+
+```     
                 
 ###### 发送消息
 
