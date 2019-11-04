@@ -1,0 +1,5 @@
+org.springframework.boot.autocconfig.RobotAutoConfigurationonfigure.EnableAutoConfiguration=io.github.mengwang0211.core.SMSMessagePusher,\
+  io.github.mengwang0211.core.AliyunPhoneMessagePusher,\
+  io.github.mengwang0211.core.EmailMessagePusher
+
+
