@@ -49,7 +49,7 @@ email:
 ####### 发送短信
 
     
-    @authwired
+    @Autowired
     SMSMessagePusher sMSMessagePusher;
     
     sMSMessagePusher.sendMsg(messageEntity);
@@ -57,7 +57,7 @@ email:
 
 ####### 发送email
 
-    @authwired
+    @Autowired
     EmailMessagePusher emailMessagePusher;
     
     emailMessagePusher.sendMsg(messageEntity);
@@ -65,7 +65,7 @@ email:
 
 ####### 打电话
 
-    @authwired
+    @Autowired
     AliyunPhoneMessagePusher aliyunPhoneMessagePusher;
     
     aliyunPhoneMessagePusher.sendMsg(messageEntity); 
