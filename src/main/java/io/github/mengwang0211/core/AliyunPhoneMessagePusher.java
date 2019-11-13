@@ -35,25 +35,14 @@ public class AliyunPhoneMessagePusher implements IMessage{
     private String calledShowNumber;
 
     @Override
-    public String sendMsg(MessageEntity messageEntity){
+    public boolean sendMsg(MessageEntity messageEntity){
         try {
             this.phone(messageEntity);
         }catch (Exception e){
             log.error(e.getMessage());
+            return false;
         }
-        return "ok";
-    }
-
-    @Override
-    public String sendMsgBatch(List<MessageEntity> messageEntities) {
-        messageEntities.stream().forEach(messageEntity -> {
-            try {
-                this.phone(messageEntity);
-            }catch (Exception e){
-                log.error(e.getMessage());
-            }
-        });
-        return "ok";
+        return true;
     }
 
     private void phone(MessageEntity messageEntity) throws Exception{

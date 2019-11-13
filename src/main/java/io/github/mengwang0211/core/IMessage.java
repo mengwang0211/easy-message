@@ -16,13 +16,5 @@ public interface IMessage {
      * @param messageEntity message entity
      * @return the string
      */
-    String sendMsg(MessageEntity messageEntity);
-
-    /**
-     * Send msg batch string
-     *
-     * @param messageEntities message entities
-     * @return the string
-     */
-    String sendMsgBatch(List<MessageEntity> messageEntities);
+    boolean sendMsg(MessageEntity messageEntity);
 }

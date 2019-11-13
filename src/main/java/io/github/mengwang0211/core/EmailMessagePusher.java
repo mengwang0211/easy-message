@@ -36,7 +36,7 @@ public class EmailMessagePusher implements IMessage{
 
 
     @Override
-    public String sendMsg(MessageEntity messageEntity) {
+    public boolean sendMsg(MessageEntity messageEntity) {
         this.initEmail();
         try {
             OhMyEmail.subject(messageEntity.getEmailSubject())
@@ -46,24 +46,8 @@ public class EmailMessagePusher implements IMessage{
                     .send();
         } catch (SendMailException e) {
             log.info(e.getMessage());
+            return false;
         }
-        return null;
-    }
-
-    @Override
-    public String sendMsgBatch(List<MessageEntity> messageEntities) {
-        this.initEmail();
-        messageEntities.stream().forEach(messageEntity -> {
-            try {
-                OhMyEmail.subject(messageEntity.getEmailSubject())
-                        .from(emailUsername)
-                        .to(messageEntity.getAddress())
-                        .text(messageEntity.getEmailText())
-                        .send();
-            } catch (SendMailException e) {
-                log.info(e.getMessage());
-            }
-        });
-        return null;
+        return true;
     }
 }
