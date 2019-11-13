@@ -25,17 +25,23 @@
 
 ```yaml
 aliyun:
+  # sms profile
   sms:
     accessKeyId:
     accessKeySecret:
     signName:
     templateCode:
+  # call phone profile
   phone:
+    # accessKeyId
     accessKeyId:
+    # accessKeySecret
     accessKeySecret:
+    # ttsCode 模板编号
     ttsCode:
+    # 主叫号码
     calledShowNumber:
-
+# email profile
 email:
    username:
    password:
@@ -68,6 +74,10 @@ email:
     @Autowired
     AliyunPhoneMessagePusher aliyunPhoneMessagePusher;
     
+    MessageEntity messageEntity = new MessageEntity();
+    messageEntity.setPhoneTtsCode("XXXXX");
+    messageEntity.setPhoneNumber("21231324");
+    messageEntity.setTemplatePhoneParam(new HashMap());
     aliyunPhoneMessagePusher.sendMsg(messageEntity); 
 
     

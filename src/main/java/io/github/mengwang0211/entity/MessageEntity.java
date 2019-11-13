@@ -12,6 +12,8 @@ import java.util.Map;
 @Data
 public class MessageEntity {
 
+    /****----      sms param start                 --------*/
+
     /**
      * Template code
      */
@@ -26,6 +28,10 @@ public class MessageEntity {
      * Contacts
      */
     List<String> contacts;
+
+    /****----      sms param end                 --------*/
+
+    /****----      email param start                 --------*/
 
     /**
      * Email subject
@@ -42,13 +48,17 @@ public class MessageEntity {
      */
     String address;
 
+    /****----      email param end                 --------*/
+
+    /****----      call phone param start                 --------*/
+
     /**
      * Phone tts code
      */
     String phoneTtsCode;
 
     /**
-     * Phone number
+     * Phone number 被叫号码 [主叫号码配置中配置]
      */
     String phoneNumber;
 
@@ -56,4 +66,6 @@ public class MessageEntity {
      * Template phone param
      */
     Map<String, String> templatePhoneParam;
+
+    /****----      call phone param end                 --------*/
 }
