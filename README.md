@@ -17,7 +17,7 @@
     <dependency>
         <groupId>io.github.mengwang0211</groupId>
         <artifactId>easy-message</artifactId>
-        <version>1.0.0</version>
+        <version>1.0.1</version>
     </dependency>    
     
     
